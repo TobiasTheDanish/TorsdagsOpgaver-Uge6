@@ -60,6 +60,24 @@ public class FileIO {
         return values;
     }
 
+    public String[] readChanceData()
+    {
+        ArrayList<String> values = new ArrayList<>();
+        String header;
+        try {
+            Scanner scan = new Scanner(new File("data/chanceCards.txt"));
+            header = scan.nextLine();
+            for (int i = 0; i < values.size(); i++){
+                String s = scan.nextLine();
+                values.set(i, s);
+            }
+        } catch (FileNotFoundException e){
+            System.out.println(e);
+        }
+        String[] valuesArray = values.toArray(new String[values.size()]);
+        return  valuesArray;
+    }
+
 
 }
 
