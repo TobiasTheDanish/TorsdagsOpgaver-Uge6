@@ -1,16 +1,27 @@
+import java.util.ArrayList;
+
 public class Player {
     private String name;
     private BankAccount account;
     private int startPosition = 1;
     private int currentPosition = startPosition;
 /*TODO: tilføj en liste til at holde på det spilleren har købt (jvf. Task 1.c)*/
-
+    private ArrayList<Property> deeds;
     public Player(String name, int amount) {
         this.name = name;
         account = new BankAccount(amount);
+        deeds = new ArrayList<>();
     }
 
+    public ArrayList<Property> getDeeds()
+    {
+        return deeds;
+    }
 
+    public void addDeed(Property p)
+    {
+        deeds.add(p);
+    }
 
     public String getName() {
         return name;

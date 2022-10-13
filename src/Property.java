@@ -40,7 +40,7 @@ public class Property extends Field{
 
             p.buy(this.cost);
             //save deed hos spilleren
-            //p.addDeed(this);
+            p.addDeed(this);
             this.owner = p;
 
         }else if(option.equals("payRent")){
